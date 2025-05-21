@@ -1,0 +1,139 @@
+
+UniPath - Project Structure Documentation
+
+1. AUTHENTICATION
+---------------
+Components:
+- SignupForm: Handles user registration with multi-step form
+- SignupProgressNav: Navigation bar showing signup progress steps
+- SignupStepInfo: Displays current step information
+- SignupFormFooter: Footer with navigation buttons
+- ProtectedRoute: Route wrapper for authenticated pages
+
+Authentication Context:
+- AuthContext: Manages auth state with Supabase
+- Session management and user state
+- No Google authentication (removed)
+
+2. CORE FEATURES
+---------------
+Search & Discovery:
+- University search with filters
+- Academic requirements filtering
+- Location-based search
+- Scholarship filtering
+
+Document Management:
+- Document upload and storage
+- Progress tracking
+- File categorization
+- Upload credits system
+
+In-Platform Browser:
+- BrowserContent: Iframe-based browser
+- BrowserToolbar: Navigation controls
+- URL management and history
+
+3. AI INTEGRATION
+---------------
+Chat Components:
+- Multiple AI providers (Claude, Gemini, Mistral)
+- Typing indicators
+- Message history
+- Error handling
+
+4. UI COMPONENTS
+---------------
+Common Components:
+- Button, Input, Label
+- Progress indicators
+- Cards and modals
+- Form elements
+- Responsive layout components
+
+Navigation:
+- Navbar: Main navigation
+- Aurora background effects
+- Responsive design
+
+5. DATA MANAGEMENT
+----------------
+Supabase Integration:
+- Authentication
+- File storage
+- User profiles
+- Credit system
+
+Types:
+- University data types
+- User and auth types
+- Document types
+- Payment and subscription types
+
+6. PAGES
+-------
+Main Routes:
+- Index (Landing)
+- Login
+- Signup
+- Dashboard
+- Discover
+- AI Assistant
+- Documents
+- Admin
+
+7. HOOKS & UTILITIES
+------------------
+Custom Hooks:
+- useChatActions: AI chat management
+- useBrowserNavigation: Browser history
+- useScrollToBottom: Chat scroll
+- useAuthState: Authentication state
+- useSignupForm: Form management
+
+Utilities:
+- Format functions
+- Type utilities
+- Style utilities
+
+8. SUBSCRIPTION & PAYMENTS
+------------------------
+- Plan management
+- Credit system
+- Premium features
+- Payment processing
+
+9. FILE STRUCTURE
+---------------
+Key Directories:
+/src
+  /components
+    /auth        - Authentication components
+    /ai          - AI chat components
+    /browser     - In-platform browser
+    /discover    - University discovery
+    /documents   - Document management
+    /ui          - Common UI components
+  /contexts      - React contexts
+  /hooks         - Custom hooks
+  /pages         - Route pages
+  /types        - TypeScript types
+  /utils        - Utility functions
+  /integrations  - External services
+
+Build Info:
+- React + TypeScript
+- Tailwind CSS
+- Shadcn/UI
+- Supabase backend
+- Vite build system
+
+Current Development Status:
+- Core authentication implemented
+- Basic UI components in place
+- University search functional
+- Document management ready
+- AI chat integration complete
+- Payment system integrated
+
+Note: This documentation should be updated as new features are added or existing ones are modified.

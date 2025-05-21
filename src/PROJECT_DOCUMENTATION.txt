@@ -1,0 +1,164 @@
+
+# UniPath - Comprehensive Project Documentation
+
+## OVERVIEW
+This document provides a detailed breakdown of all project files, their purposes, dependencies, and usage across the application. Use this document to understand the project structure and identify candidates for cleanup or refactoring.
+
+## 1. CORE APPLICATION FILES
+
+### App Structure
+- src/App.tsx - Main application component, defines routing and global providers
+- src/main.tsx - Entry point, renders App component, sets up service worker
+- src/index.css - Global CSS imports, imports base styles, components, and animations
+- src/vite.config.ts - Vite configuration, defines plugins and aliases
+
+### Theme & Styling
+- src/styles/base.css - Root CSS variables, theme definitions, global base styles
+- src/styles/components.css - Reusable component classes and utility styles
+- src/styles/animations.css - Animation keyframes and utility classes
+- src/styles/fonts.css - Font definitions and typography settings
+- src/lib/utils.ts - Utility functions including class name merging (cn)
+
+## 2. CONTEXT PROVIDERS
+
+### Authentication
+- src/contexts/AuthContext.tsx - Authentication state management using Supabase
+  - Used across the application for user authentication
+  - Imported by protected routes and user-specific features
+
+### Theme Management
+- src/contexts/ThemeContext.tsx - Theme management (light/dark/system)
+  - Provides theme values and theme switching functionality
+  - Used by UI components that need theme awareness
+  - Controls CSS class application for theming
+
+## 3. PAGES
+
+### Public Pages
+- src/pages/Index.tsx - Landing page with marketing content
+- src/pages/Login.tsx - User login page
+- src/pages/Signup.tsx - User registration with multi-step form
+- src/pages/NotFound.tsx - 404 error page
+
+### Protected Pages
+- src/pages/Dashboard.tsx - User dashboard with activity and stats
+- src/pages/Apply.tsx - University application interface
+- src/pages/Path.tsx - Application journey visualization
+- src/pages/AI.tsx - AI assistant interface
+- src/pages/Documents.tsx - Document management
+- src/pages/InPlatformBrowser.tsx - In-app web browser
+- src/pages/Profile.tsx - User profile management
+- src/pages/Admin.tsx - Admin controls (restricted access)
+- src/pages/SubscriptionPlans.tsx - Subscription plan selection
+- src/pages/Discover.tsx - University discovery interface
+- src/pages/Favorites.tsx - Saved universities
+- src/pages/FileManager.tsx - Document management interface
+
+## 4. COMPONENTS BY CATEGORY
+
+### Layout Components
+- src/components/layout/Navbar.tsx - Main navigation bar
+- src/components/layout/Footer.tsx - Site footer
+- src/components/layout/NavbarContainer.tsx - Wrapper for navigation
+- src/components/layout/DesktopNavigation.tsx - Desktop navigation menu
+- src/components/layout/MobileMenu.tsx - Mobile navigation menu
+- src/components/layout/NavLink.tsx - Navigation link component
+- src/components/layout/UserMenuSection.tsx - User dropdown menu
+- src/components/layout/navData.tsx - Navigation data definitions
+
+### Auth Components
+- src/components/auth/SignupFormContainer.tsx - Container for signup forms
+- src/components/auth/AccountInfoForm.tsx - User info form
+- src/components/auth/AcademicInfoForm.tsx - Academic details form
+- src/components/auth/ProtectedRoute.tsx - Authentication route guard
+- src/components/auth/ProtectedPremiumRoute.tsx - Premium feature route guard
+- src/components/auth/SignupStepInfo.tsx - Signup progress info
+- src/components/auth/SignupProgressNav.tsx - Signup navigation
+- src/components/auth/SignupFormFooter.tsx - Form navigation buttons
+- src/components/auth/SignupGoogleButton.tsx - Google auth button
+- src/components/auth/progress/* - Progress indicator components
+
+### Home Page Components
+- src/components/home/Hero.tsx - Landing page hero section
+- src/components/home/Features.tsx - Features showcase
+- src/components/home/FeatureCard.tsx - Individual feature card
+- src/components/home/HowItWorks.tsx - Process explanation
+- src/components/home/ApplicationJourney.tsx - Journey visualization
+- src/components/home/Testimonials.tsx - User testimonials
+- src/components/home/PricingSection.tsx - Pricing information
+- src/components/home/CallToAction.tsx - Conversion section
+
+### UI Components
+- src/components/ui/aurora-background.tsx - Animated background
+- src/components/ui/theme-toggle.tsx - Theme switching control
+- src/components/ui/button.tsx - Button component
+- src/components/ui/card.tsx - Card component
+- src/components/ui/* - Various shadcn/ui components
+
+### Profile Components
+- src/components/profile/ProfileInformation.tsx - User profile info
+- src/components/profile/SubscriptionDetails.tsx - Subscription info
+- src/components/profile/PricingTiers.tsx - Available plans
+
+### University Components
+- src/components/universities/* - University discovery and search
+- src/components/universities/filters/* - Search filtering components
+- src/components/universities/university-card/* - University display
+
+### AI Components
+- src/components/ai/* - AI chat interfaces
+- src/components/ai/chat-components/* - Chat UI elements
+- src/components/ai/chatbots/* - Different AI provider implementations
+- src/components/ai/hooks/* - Chat functionality hooks
+- src/components/ai/services/* - AI service integrations
+- src/components/ai/types/* - Type definitions
+- src/components/ai/utils/* - Helper functions
+
+### Document Management
+- src/components/documents/* - Document management UI
+- src/components/documents/FileDropzone.tsx - File upload UI
+- src/components/documents/DocumentUploader.tsx - Upload management
+- src/components/documents/FileManagerTabs.tsx - Document organization
+
+### Path Components
+- src/components/path/* - Application journey visualization
+- src/components/path/hooks/* - Path functionality hooks
+- src/components/path/pathway/* - Path display components
+- src/components/path/university/* - University selection for paths
+
+### Browser Components
+- src/components/browser/BrowserContent.tsx - In-app browser display
+- src/components/browser/BrowserToolbar.tsx - Navigation controls
+- src/components/browser/BrowserCursor.tsx - Custom cursor effects
+- src/components/browser/useBrowserNavigation.ts - Browser state management
+
+## 5. HOOKS
+
+### Authentication Hooks
+- src/hooks/useAuthState.ts - Access auth state
+- src/hooks/useAuthActions.ts - Auth operations
+- src/hooks/useProfile.ts - User profile management
+- src/hooks/useSignupAuth.ts - Signup flow auth
+- src/hooks/useSignupForm.ts - Signup form management
+- src/hooks/useSignupFormState.ts - Form state management
+- src/hooks/useSignupValidation.ts - Form validation
+
+### Feature Hooks
+- src/hooks/use-documents.ts - Document management
+- src/hooks/use-document-upload.ts - File upload handling
+- src/hooks/university-search/* - University search functionality
+- src/hooks/payments/* - Payment processing hooks
+- src/hooks/use-subscription.ts - Subscription management
+- src/hooks/use-toast.ts - Toast notifications
+- src/hooks/use-mobile.tsx - Mobile detection
+- src/hooks/useWindowFocus.ts - Window focus detection
+
+## 6. KEY INTEGRATION OPPORTUNITIES
+
+After reviewing the codebase, here are some integration opportunities:
+
+1. Better theme consistency across components - ensure all components handle both light and dark modes effectively
+2. Animation improvements - adding subtle animations for better UX across user interactions
+3. Mobile responsiveness enhancements - ensure consistent experience across devices
+4. Improved visual hierarchy in key marketing sections - hero, features, call to action
+5. Ensure theme toggle is consistently placed and styled across the application

@@ -1,0 +1,62 @@
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-lg border dark:border-white/10 border-neutral-200/80;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .neo-blur {
+    @apply backdrop-blur-xl border dark:border-white/10 border-neutral-200/80;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-br from-foreground via-foreground to-foreground/70 bg-clip-text text-transparent;
+  }
+
+  .purchase-credits-page {
+    @apply text-foreground;
+  }
+
+  .auth-page {
+    @apply min-h-screen flex items-center justify-center;
+  }
+
+  /* Minimalistic card style */
+  .minimal-card {
+    @apply rounded-lg border p-4 shadow-sm transition-all duration-200 hover:shadow-md;
+  }
+
+  /* Clean button styles */
+  .btn-minimal {
+    @apply rounded-md px-4 py-2 transition-colors duration-200;
+  }
+}
+
+/* Performance optimizations */
+.transform-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/20 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/30;
+}

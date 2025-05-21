@@ -1,0 +1,76 @@
+
+:root {
+  --cursor-color: rgba(0, 0, 0, 0.6);
+  --cursor-color-active: rgba(0, 0, 0, 0.8);
+  --cursor-size: 24px;
+  --cursor-border: rgba(255, 255, 255, 0.5);
+}
+
+.dark {
+  --cursor-color: rgba(255, 255, 255, 0.6);
+  --cursor-color-active: rgba(255, 255, 255, 0.8);
+  --cursor-border: rgba(0, 0, 0, 0.5);
+}
+
+.cursor-container {
+  position: fixed;
+  pointer-events: none;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+  will-change: transform;
+}
+
+.cursor-icon {
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+  background-color: var(--cursor-color);
+  border-radius: 50%;
+  border: 1px solid var(--cursor-border);
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  transform-origin: center;
+}
+
+.cursor-normal {
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+}
+
+.cursor-link {
+  width: calc(var(--cursor-size) * 1.5);
+  height: calc(var(--cursor-size) * 1.5);
+  background-color: var(--cursor-color-active);
+  transform: scale(1.1);
+}
+
+.cursor-text {
+  width: 2px;
+  height: 24px;
+  border-radius: 1px;
+  background-color: var(--cursor-color-active);
+}
+
+.cursor-pointer {
+  transform: scale(0.8);
+  background-color: var(--cursor-color-active);
+}
+
+body:active .cursor-icon {
+  transform: scale(0.9);
+  background-color: var(--cursor-color-active);
+}
+
+@media (max-width: 768px) {
+  .cursor-container {
+    display: none;
+  }
+}
+
+/* Hide native cursor when custom cursor is active */
+html:has(.cursor-container) {
+  cursor: none !important;
+}
+
+html:has(.cursor-container) * {
+  cursor: none !important;
+}
