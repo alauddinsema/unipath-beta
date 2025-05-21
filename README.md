@@ -22,12 +22,6 @@
 
 ---
 
-## 🚀 Live Demo
-
-[View Unipath Online](https://lovable.dev/projects/34b5fe4e-eb44-45e5-a853-8f48e2a18e64)
-
----
-
 ## ⚙️ Installation
 
 Clone the repo and install dependencies:
